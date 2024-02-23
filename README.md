@@ -36,3 +36,4 @@ I started the name change from Bloatynosy just last year, but I didn't manage to
 - Access to third party plugins and script, like Chris Titus app
 - Chat with Microsoft Copilot
 - Ask to restart Windows Explorer
+- Ask to run vive tool feature configurations (static)

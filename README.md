@@ -34,3 +34,4 @@ I started the name change from Bloatynosy just last year, but I didn't manage to
 - Ask to show abailable space
 - Ask to show processes with hight RAM usage
 - Access to third party plugins and script, like Chris Titus app
+- Chat with Microsoft Copilot

@@ -15,6 +15,8 @@ I started the name change from Bloatynosy just last year, but I didn't manage to
 
 **Windows-specific Cotweaker features**
 - Ask to add a device
+- Ask to add Microsoft Account
+- Ask to backup 
 - Ask to take a screenshot
 - Ask to change your background image
 - Ask for system (winver) or device information
@@ -23,7 +25,10 @@ I started the name change from Bloatynosy just last year, but I didn't manage to
 - Ask to show startup apps
 - Ask for your IP address
 - Ask to install apps
-- Ask to uninstall apps and remove bloatware
+- Ask to uninstall apps
+- Ask to uninstall Microsoft Software 
+- Ask to remove bloatware
+- Intelligent "AI" driven bloatware detection
 - Set up Privacy options
 - Search for AI/Copilot features on Windows
 - Turn off AI/Copilot features
@@ -35,9 +40,9 @@ I started the name change from Bloatynosy just last year, but I didn't manage to
 - Ask to reset system
 - Ask to show available space
 - Ask to show processes with high RAM usage
-- Access to third party plugins and script, like Chris Titus app
+- Access to third party plugins and scripts, like Chris Titus app
 - Chat with Microsoft Copilot
-- Ask to restart Windows Explorer
+- Ask to restart Windows Explorer and Taskbar 
 - Ask to run vive tool feature configurations (static)
 
 ## How-to

@@ -33,8 +33,8 @@ I started the name change from Bloatynosy just last year, but I didn't manage to
 - Ask to run quick scan in Windows Security/Defender
 - Ask to control options (like taskbar) directly. Turn widgets on and off, arrange taskbar icons, etc.
 - Ask to reset system
-- Ask to show abailable space
-- Ask to show processes with hight RAM usage
+- Ask to show available space
+- Ask to show processes with high RAM usage
 - Access to third party plugins and script, like Chris Titus app
 - Chat with Microsoft Copilot
 - Ask to restart Windows Explorer

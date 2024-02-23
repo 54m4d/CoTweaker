@@ -1,4 +1,4 @@
-# Cotweaker (CoTweaker) - The Antipilot and uccessor of the BloatynosyAI App
+# Cotweaker (CoTweaker) - The Antipilot and successor of the BloatynosyAI App
 
 It's going to be a hard reset, but more powerful than ever. I will say goodbye to the name Bloatynosy and want to ensure a smooth transition. 
 **We all know Microsoft's Copilot and its numerous siblings, with the integration of Cowriters into Notepad or Cocreator into the Paint app. Therefore, I thought of donating a new Cotweaker (or CoTweaker) to the family in the future, which will serve and control numerous aspects of Windows (even offline).** The app will receive numerous new Windows management functions similar to Microsoft's Copilot. Cotweaker's strength lies in its speed and its independence from permanent internet connectivity. Microsoft Copilot relies on continuous internet connectivity for operation, unlike Cotweaker, which doesn't require a permanent internet connection. This means that without internet, Copilot won't function, as it processes inputs through Microsoft servers, leading to delays in response time upon query submission or voice interaction.

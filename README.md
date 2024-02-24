@@ -46,7 +46,9 @@ I started the name change from Bloatynosy just last year, but I didn't manage to
 - Ask to run vive tool feature configurations (static)
 
 ## How-to
-With the chat box in front of you, input your search terms, inquiries, or keywords, and enjoy real-time results. For instance, if you need to 'install an app,' simply type 'install' or any related keyword, and you'll receive the same outcome. Additionally, using this search function, you can easily install popular apps using 'winget.' Remember other useful keywords such as 'bloat,' 'appx,' or 'uninstall' to effortlessly remove unwanted default apps in Windows 10/11. The possibilities are endless. Have fun experimenting with different queries! 
+Use the chat box to search keywords for real-time results. Example: search 'install' for app installation. 
+Also try 'bloat,' 'appx,' or 'uninstall' to remove default apps in Windows 10/11. 
+Explore popular keywords like '#ai' for AI-related queries, such as 'AI removal.' Have fun experimenting with different queries! 
 
 ## Support statement
 WebView2 apps can run on the following versions of Windows:

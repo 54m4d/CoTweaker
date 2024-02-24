@@ -1,0 +1,561 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f3f3;
+    color: #333;
+    padding: 20px;
+    text-align: left;
+    margin: 180px 0 60px; /* top 260px, right 0, bottom 60px, left 0 */
+    zoom: 0.9; /* WebView2 zoom level */
+}
+	
+.emoji-container {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.emoji-container a {
+    text-decoration: none;
+}
+
+.emoji-container h1 {
+    font-family: Arial, sans-serif;
+    color: #000;
+    font-size: 27px;
+    margin-bottom: 20px; 
+    font-weight: 600;
+    display: inline-block; /* Display the h1 inline */
+}
+
+.emoji-container h2 {
+    color: #1a1a1a;
+    font-size: 17px;
+    margin-top: -10px; /* Provide some space between h1 and h2 */
+    font-weight: normal;
+}
+
+.emoji-container .emoji {
+    font-size: 50px;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: -20px; /* Adjust margin to align vertically */
+    margin-right: 0px; /* Add some space between emoji and h1 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Hide original text color */
+    vertical-align: middle; /* Align vertically */
+    /* Static Background */
+	background-image: linear-gradient(45deg, 
+		rgba(255, 255, 0, 0.5), 10%,  /* Yellow */
+		rgba(0, 128, 0, 0.5), 20%,    /* Green */
+		rgba(173, 216, 230, 0.5), 30%, /* Baby Blue */
+		rgba(30, 144, 255, 0.5), 40%, /* Blue */
+		rgba(255, 165, 0, 0.5), 50%,  /* Orange */
+		rgba(255, 0, 255, 0.5), 60%,  /* Magenta */
+		rgba(255, 192, 203, 0.5)      /* Pink */
+	);
+}
+
+#settingsButton {
+    position: absolute;
+    top: 5px; 
+    right: 5px; 
+    padding: 5px 10px; 
+    background-color: transparent; 
+    border: none;
+	font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+	z-index: 1000;
+}
+
+#settingsButton:hover {
+    background-color: #e5e5e5; /* Slightly darker grey on hover */
+    color: #000000; 
+    border-color: #757575; /* Darker grey border on hover */
+    border-radius: 8px; /* Rounded corners on hover */
+}
+
+#refreshButton {
+    position: absolute;
+    top: 7px; 
+    right: 50px; 
+    padding: 5px 10px; 
+    background-color: transparent; 
+    border: none;
+	font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+	z-index: 1000;
+}
+
+#refreshButton:hover {
+    background-color: #e5e5e5; /* Slightly darker grey on hover */
+    color: #000000; 
+    border-color: #757575; /* Darker grey border on hover */
+    border-radius: 8px; /* Rounded corners on hover */
+}
+.quick-controls {
+    display: inline-flex;
+    gap: 0px;
+    border: 1px solid #ccc; /* Default grey border */
+    padding: 0px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.quick-controls .button {
+	 position: relative; 
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #ededed;  /* Default grey color */
+    color: #262626;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    width: 120px; /* Fixed width */
+    height: 45px; /* Fixed height */
+    box-sizing: border-box; /* Include padding in width and height */
+    cursor: pointer;
+}
+.quick-controls .active {
+    color: white;
+    background-color: #933e82;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+}
+
+.quick-controls .button .small-text {
+    font-size: 10px; 
+}
+
+.quick-controls .active .small-text {
+    color: white;
+	
+}.quick-controls .subtext {
+    position: absolute; /* Position the subtext absolutely */
+    top: 5px; 
+    left: 50%; 
+    transform: translateX(-50%); /* Center it horizontally */
+    font-size: 10px;
+}
+
+.quick-controls .button-text {
+    display: block; /* Ensure button text is displayed as block */
+    font-size: 14px;
+    margin-top: 10px; 
+}
+
+/* Different colors for our three buttons*/
+#removeBloatwareButton.active {
+    background-color: #933e82;
+}
+
+#checkPrivacyButton.active {
+    background-color: #186fde;
+}
+
+#checkCopilotStatusButton.active {
+    background-color: #00667b;
+}
+
+
+/* UI: Assisted AI Buttons (and static update-button) */
+#buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#buttons-container button,
+#update-button {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+    text-align: left;
+    padding: 10px 20px;
+    border: 1px solid #a1a1a1;
+    margin-bottom: 8px;
+    border-radius: 8px;
+	width: 100%; /* Make buttons fill container width */
+    color: #000;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#buttons-container button:hover,
+#update-button:hover {
+    border: 1px solid #7a336c; /* Pink border on hover */
+}
+
+/* Remove appx button */
+#buttonsAppx-container button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 14px;
+    text-align: left;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #a1a1a1;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    width: 100%; /* Make buttons fill container width */
+    color: #000;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Add transition for smooth rotation */
+}
+
+#buttonsAppx-container button:hover {
+    transform: rotate(20deg); /* Rotate on hover */
+}
+
+
+#buttonsAppx-container button:hover {
+    border: 1px solid #7a336c; /* Pink border on hover */
+}
+
+#buttonsAppx-container button::before {
+    content: "\1F5D1"; /* Unicode character for trash/bin */
+    margin-right: 10px; 
+    font-size: 25px;
+	color: #5643ea; 
+}
+
+#buttonsAppx-container button:hover::before {
+    color: red; /* Change trash icon color on hover */
+}
+
+/* Microsoft Copilot Toggle */
+.copilot-button {
+    position: absolute;
+    top: 5px;
+    right: 100px;
+    display: inline-block;
+    padding: 5px 10px; 
+    background-color: white;
+    border: 1px solid #ce64e4; 
+    border-radius: 8px; 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+}
+
+.copilot-switch {
+    display: inline-block;
+    width: 30px;
+    height: 15px; 
+    background-color: #ccc; /* Off */
+    border-radius: 15px; 
+    position: relative;
+    margin-left: 5px;
+}
+
+.copilot-switch::before {
+    content: "";
+    position: absolute;
+    top: 1px; 
+    left: 1px; 
+    width: 13px;
+    height: 13px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.copilot-switch.on {
+    background-color: purple; 
+}
+
+.copilot-switch.on::before {
+    transform: translateX(15px);
+}
+
+#settingsButton {
+    position: absolute;
+    top: 5px; 
+    right: 5px; 
+    padding: 5px 10px; 
+    background-color: transparent; 
+    border: none;
+	font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+	z-index: 1000;
+}
+
+#settingsButton:hover {
+    background-color: #e5e5e5; /* Slightly darker grey on hover */
+    color: #000000; 
+    border-color: #757575; /* Darker grey border on hover */
+    border-radius: 8px; /* Rounded corners on hover */
+}
+
+
+.chatbox-container {
+    position: relative;
+}
+
+.chatbox-container input {
+   backdrop-filter: blur(10px);
+   background-color: rgba(255, 255, 255, 0.3);
+   border-radius: 8px;
+   padding: 15px;
+   margin-top: 20px;
+   color: #000;
+}
+
+/* Chatbox: input styling */
+#chatbox {
+	bottom: 0;
+    background-color: #fff;
+    width: 95%;
+    height: 50px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    outline: none;
+    border-bottom: 1px solid #7a336c; /* Bottom border color */
+    transition: border-bottom 0.3s ease; /* Add transition property */
+    margin-bottom: 10px;
+}
+
+#chatbox:focus {
+    border-bottom: 3px solid #7a336c; /* Change bottom border on focus */
+    animation: border-flash 3s infinite; /* Add border-flash animation */
+}
+
+@keyframes border-flash {
+    0%, 100% {
+        border-bottom: 3px solid #b19cd9; /* Light Purple */
+    }
+    25% {
+        border-bottom: 3px solid #ffb6c1; /* Light Pink */
+    }
+    50% {
+        border-bottom: 3px solid #98fb98; /* Pale Green */
+    }
+    75% {
+        border-bottom: 3px solid #add8e6; /* Light Blue */
+    }
+}
+
+.chatbox-items div {
+	display: inline-block; 
+    padding: 5px;
+	font-size: 14px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 2px solid #7a336c; /* Rounded Microsoft Copilot magenta border for each result */
+    border-radius: 8px; /* Rounded corners */
+	margin-bottom: 10px;
+}
+
+.chatbox-items div:hover {
+    background-color: #e9e9e9;
+    color: magenta;
+}
+
+/* Chatbox active item styling */
+.chatbox-active {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+/* UI: LogContainer */
+#logContainer {
+    position: sticky;
+    bottom: 0;
+    padding: 12px 24px;
+    background: #f3f3f3;
+    color: #000; 
+    border-top: 1px solid #8a2be2; /* Purple top border color */
+    text-align: left;
+    font-size: 14px;
+    z-index: 1000;
+    animation: pulse-border 5s infinite;
+    border-radius: 12px; /* Rounded corners */
+	z-index: 1000;
+}
+
+@keyframes pulse-border {
+    0% {
+        border-top-color: #8a2be2;
+    }
+    50% {
+        border-top-color: #ff69b4; /* Change to pink halfway */
+    }
+    100% {
+        border-top-color: #8a2be2;
+    }
+}
+
+/* Hide Headers by default */
+#appsHeader,
+#appxHeader,
+#dashboardHeader{
+    display: none;
+}
+
+/* Header styling */
+#homeHeader,
+#dashboardHeader,
+#appsHeader,
+#appxHeader {
+    background: #f3f3f3;
+    padding: 20px;
+    margin: 10px 0;
+	z-index:  998;  /* Alway lower z-index than logContainer */
+}
+
+.header-caption {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.glassy-box {
+    position: relative; /* Ensure relative positioning for absolute positioning of children */
+	background: #f3f3f3;
+    flex: 1;
+    margin: 0 10px;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* UI: Glassy-Box effects*/
+.glassy-box button {
+	font-family: "Segoe UI";
+	font-size: 14px;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #e0d0dd; /* Transparent border */
+	margin-bottom: 5px;
+    border-radius: 10px;
+    color: black;
+    background: #fefdfe;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    position: relative; /* Needed for the pseudo-element */
+    cursor: pointer;
+}
+
+.glassy-box button:hover {
+    border: 3px solid #ff008e; /* Pink border on hover */
+}
+
+/* UI: Header styling for Toggle Switches */
+.checkbox-label {
+    margin-left: 10px;
+    display: inline-block;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* UI: Toggle Switches */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin-right: 20px;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.toggle-switch-label {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    width: 50px;
+    height: 24px;
+    background-color: #d6d6d6; /* Light gray background */
+    border-radius: 12px;
+    transition: background-color 0.3s;
+}
+
+.toggle-switch-label:before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff; /* White circle */
+    border-radius: 50%;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.toggle-switch input:checked + .toggle-switch-label {
+    background-color: #4a90e2; /* Dodger Blue when checked */
+}
+
+.toggle-switch input:checked + .toggle-switch-label:before {
+   transform: translateX(26px);
+   background-color: #fff; /* White circle when checked */
+}
+
+
+/* SECTION: Install missing apps */
+#appList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.app-item {
+    background: rgba(255, 255, 255, 0.9); /* White */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+    flex: 0 0 auto;
+}
+
+.app-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+}
+
+/* SECTION: Crapware styles */
+.appx-container {
+    padding: 1px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.appx-item {
+    background-color: #f5f5f5; /* Light background color */
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px;
+    margin-bottom: 12px;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.appx-item:hover {
+    background-color: #e0e0e0; /* Darker background color on hover */
+}
+
+.appx-details {
+    margin-bottom: 8px;
+}
+
+/* Ensure each appx-item is on a separate line */
+.appx-item {
+    width: 100%;
+}
